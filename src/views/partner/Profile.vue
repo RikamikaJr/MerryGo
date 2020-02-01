@@ -203,7 +203,7 @@
                             </template>
                             <span>530 Likes</span>
                           </v-tooltip>
-                          <v-snackbar v-model="snackbar" :timeout="timeout" :multi-line="multiLine" right color="red">
+                          <v-snackbar v-model="snackbar" :timeout="timeout" right color="red">
                             {{ text }}
                             
                             <v-btn color="white" text @click="snackbar = false" >
@@ -211,7 +211,7 @@
                             </v-btn>
                           </v-snackbar>
                           
-                          <v-dialog v-model="dialog" persistent max-width="600px">
+                          <v-dialog v-model="dialog" max-width="600px">
                             <template v-slot:activator="{ on }">
                               <v-btn color="red darken-4" class="ma-2 white--text" dark v-on="on">
                                 Comment
@@ -219,80 +219,83 @@
                               </v-btn>
                             </template>
                             <v-card>
+                              <v-img
+                              class="white--text align-end"
+                              height="150px"
+                              src="https://images.pexels.com/photos/735911/pexels-photo-735911.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                            ><v-card-title class="justify-center">Comment Section</v-card-title>
+                            </v-img>
+                            
                             <div id="comment_app" class="container" >
-		<div class="navbar navbar-default" >
-			<div class="navbar-header" >
-				<a class="navbar-brand">Comments App</a>
-			</div>
-			<div class="navbar-collapse collapse" >
-				<ul class="navbar-right navbar-nav nav" >
-					<li>
-						<a href="#">{{total_comments}} Comments</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<div>
-			<div class="row" >
-				<!-- form -->
-				<form class="col-sm-4 col-sm-offset-4" v-on:submit.prevent='submit' >
-					<h3>Create Comments</h3>
-					<div class="form-group">
-						<textarea required="required" placeholder="Your comment" v-model='input' class="form-control" ></textarea>
-					</div>
-					<button class="btn btn-info" >Create</button>
-					<br />
-					<br />
-					<legend></legend>
-				</form>
-				<!-- form -->
-				<div class="cols-m-12" >
-					<div class="col-sm-4 col-sm-offset-4" >
-						<div v-if='total_comments == 0' >
-							<div class="alert alert-info" >
-								No Comments
-							</div>
-						</div>
-						<div class="list-group" >
-							<div class="list-group-item" v-for="(comment,index) in comments" :key="index">
-								<p><strong>Comment: </strong> {{comment.comment}}</p>
-								<p>
-									<strong>Total Likes:</strong>
-									{{comment.total_likes}}
-								</p>
-								<p>
-									<button v-on:click='like(index)' class="btn btn-xs btn-info">Like</button>
-								</p>
-								<h5>Replies</h5>
-								<div class="list-group" >
-									<div class="list-group-item" v-for="(reply,index) in comment.replies" :key="index">
-										<p>
-											<strong>reply:</strong> {{reply.reply}}
-										</p>
-									</div>
-									<div class="list-group-item"  style="padding: 00;" >
-										<form v-on:submit.prevent='addReply(index)' >
-											<input v-model='reply' placeholder="reply" class="form-control" />
-										</form>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                                
+                                <div>
+                                  <div class="row" >
+                                    <v-col cols="12">
+                                      <form v-on:submit.prevent='submit' >
+                                      <v-textarea color="red darken-4" label="Add a Comment" v-model='input' class="form-control mb-0" placeholder="Your comment"></v-textarea>
+                                      <v-card-actions class="justify-center">
+                                      <v-btn color="red darken-4 mt-0" class="ma-2 white--text" dark @click="submit" >Create
+                                        <v-icon right dark>mdi-hand-heart</v-icon>
+                                      </v-btn>
+                                      </v-card-actions>
+                                    </form>
+                                    </v-col>
+                                    <!-- form -->
+                                    <div>
+                                      <div>
+                                        <div v-if='total_comments == 0' >
+                                          <div class="ml-5" >
+                                            Be the first to comment
+                                          </div>
+                                        </div>
+                                        <div class="list-group" >
+                                          <div class="list-group-item" v-for="(comment,index) in comments" :key="index">
+                                            <v-row no-gutters>
+                                                <v-col cols="3">
+                                                  <v-avatar color="red" size="50" class="ml-4">
+                                                    <img
+                                                        src="https://images.pexels.com/photos/1337384/pexels-photo-1337384.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                                                        alt="John"
+                                                      >
+                                                  </v-avatar>
+                                                </v-col>
+                                                <v-col cols="9">
+                                                  <v-row no-gutters class="ml-1">
+                                                  {{comment.comment}}
+                                                  </v-row>
+                                                  <v-row no-gutters class="mt-2">
+                                                    <v-btn text icon color="red darken-4" v-on:click='like(index)'>
+                                                      <v-icon>mdi-hand-heart</v-icon>
+                                                    </v-btn>
+                                                    <div class="mt-2"> {{comment.total_likes}} </div>
+                                                  </v-row>
+                                                  <v-row no-gutters>
+                                                    <div class="list-group" >
+                                                      <div class="list-group-item">
+                                                        <form v-on:submit.prevent='addReply(index)' >
+                                                          <v-text-field v-model='reply' color="red darken-4" label="Reply" prepend-icon="mdi-comment-multiple" class="form-control ml-1" ></v-text-field>
+                                                        </form>
+                                                      </div>
+                                                      <div class="list-group-item" v-for="(reply,index) in comment.replies" :key="index">
+                                                          <strong><v-icon>mdi-comment-multiple</v-icon></strong> {{reply.reply}}
+                                                      </div>
+                                                    </div>
+                                                  </v-row>
+                                                </v-col>
+                                              
+                                            </v-row>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </v-card>
                           </v-dialog>
-                          
-                          
-                          
                         </v-card-actions>
                       </v-card>
                     </v-container>
-                    
-                    
                   </v-tab-item>
                 </v-tabs>
               </v-card>
@@ -407,22 +410,5 @@
 
 }
 a { text-decoration: none; }
-.navbar {
-			border-radius: 0;
-		}
-		.navbar-header {
-			float: none;
-			width: 200px;
-			margin: auto;
-			position: absolute;
-			left: 0;
-			right: 0;
-			text-align: center;
-			height: 50px;
-		}
-		.navbar-brand {
-			float: none;
-			line-height: 50px;
-		}
 
 </style>
