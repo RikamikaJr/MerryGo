@@ -8,6 +8,14 @@ import Partner from '../views/Partner.vue'
 
 //Partner
 import PartnerProfile from '../views/partner/Profile.vue'
+import PartnerDashboard from '../views/dashboard/Partner.vue'
+
+//User
+import UserProfile from '../views/user/Profile.vue'
+import UserDashboard from '../views/user/Dashboard.vue'
+import UserProfileSetting from '../views/user/ProfileSetting.vue'
+import UserSchedule from '../views/user/Schedule.vue'
+import UserPolicies from '../views/user/Policies.vue'
 
 //Checklist
 
@@ -35,7 +43,6 @@ let router = new Router({
     },
     {
       path: '/home',
-      name: 'home',
       component: Home
     },
     {
@@ -45,7 +52,7 @@ let router = new Router({
     },
     {
       path: '/LoginPartner',
-      name: 'loginuser',
+      name: 'loginpartner',
       component: LoginPartner
     },
     {
@@ -54,9 +61,39 @@ let router = new Router({
       component: Partner
     },
     {
+      path: '/Dashboard/Partner',
+      name: 'dashboardpartner',
+      component: PartnerDashboard
+    },
+    {
+      path: '/User/Dashboard',
+      name: 'userdashboard',
+      component: UserDashboard
+    },
+    {
+      path: '/User/ProfileSetting',
+      name: 'userprofilesetting',
+      component: UserProfileSetting
+    },
+    {
+      path: '/User/Schedule',
+      name: 'userschedule',
+      component: UserSchedule
+    },
+    {
+      path: '/User/Policies',
+      name: 'userpolicies',
+      component: UserPolicies
+    },
+    {
       path: '/Partner/Profile',
       name: 'partnerprofile',
       component: PartnerProfile
+    },
+    {
+      path: '/User/Profile',
+      name: 'userprofile',
+      component: UserProfile
     },
     {
       path: '/Checklist',

@@ -154,7 +154,7 @@
                                     </v-card-text>
                                     <v-fade-transition>
                                       <v-overlay v-if="hover" absolute color="black" >
-                                        <v-btn color="red darken-4" to="/Partner/Profile">See more info</v-btn>
+                                        <v-btn color="red darken-4" to="/Product/WedVenue">See more info</v-btn>
                                       </v-overlay>
                                     </v-fade-transition>
                                   </v-card>

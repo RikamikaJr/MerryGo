@@ -28,6 +28,13 @@
         <v-spacer></v-spacer>
       </v-app-bar>
       <v-content>
+        <v-img
+      src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+      :aspect-ratio="16/9"
+      class="grey lighten-2"
+      max-width="2000"
+      max-height="870"
+    >
         <v-container fluid fill-height>
           
           <v-layout align-center justify-center >
@@ -35,7 +42,7 @@
           <v-row align="center" justify="center">
             <v-col cols="12" sm="8" md="8">
               <div class="gap" />
-              <v-card class="mx-auto" max-width="1000" color="rgba(0,0,0,0.1)">
+              <v-card class="mx-auto" max-width="1000" color="rgba(255,255,255,0.7)">
                 
                 <v-window v-model="step">
                   
@@ -58,7 +65,7 @@
                           <h3 class="text-center mt-3"> Forget your password?</h3>
                         </v-card-text>
                         <div class="text-center mt-3">
-                          <v-btn rounded color="red darken-4" dark>Sign In</v-btn>
+                          <v-btn rounded color="red darken-4" dark to="/Dashboard/Partner">Sign In</v-btn>
                         </div>
                       </v-col>
                       <v-col cols="12" md="4" class="red darken-4">
@@ -115,6 +122,7 @@
             </v-flex>
           </v-layout>
         </v-container>
+        </v-img>
       </v-content>
     </v-app>
   </div>

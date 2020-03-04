@@ -25,53 +25,175 @@
             </v-card>
         </div>
         <div class="detail">
-            <v-container fluid fill-height>
-                <v-col cols="12" sm="3">
-                    <v-row no-gutters>
-                    <figure class="zoom" v-on:mousemove="zoomProduct" style="background-image: url(https://images.pexels.com/photos/3014853/pexels-photo-3014853.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-                        <img src="https://images.pexels.com/photos/3014853/pexels-photo-3014853.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-                    </figure>
-                    </v-row>
-                   
-                </v-col>
-                <v-col cols="12" sm="9">
-                        <div class="product-summary">
-                        <h2 class="product-title">Basic contrast sneakers</h2>
-                        <div class="user-ratings">
-                            <div class="star-rating">
-                            <span style="width:100%"></span>
+            <v-container fill-height>
+                <v-row no-gutters>
+                    <v-col cols="12" sm="1">
+                    </v-col>
+                    <v-window v-model="step">
+                        <v-window-item :value="1">
+                            <v-col cols="12" lg="12" sm="12">
+                                <v-row no-gutters>
+                                <figure class="zoom" v-on:mousemove="zoomProduct" style="background-image: url(https://images.pexels.com/photos/3014853/pexels-photo-3014853.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
+                                    <img src="https://images.pexels.com/photos/3014853/pexels-photo-3014853.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+                                </figure>
+                                </v-row>
+                            </v-col>
+                        </v-window-item>
+                        <v-window-item :value="2">
+                            <v-col cols="12" sm="12">
+                                <v-row no-gutters>
+                                <figure class="zoom" v-on:mousemove="zoomProduct" style="background-image: url(https://images.pexels.com/photos/3014853/pexels-photo-3014853.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
+                                    <img src="https://images.pexels.com/photos/3014853/pexels-photo-3014853.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+                                </figure>
+                                </v-row>
+                            </v-col>
+                        </v-window-item>
+                    </v-window>
+                    <v-col cols="12" lg="1" md="4" sm="12" class="mt-1 ml-3 pl-3">
+                        <v-row no-gutters>
+                            <v-col cols="2" lg="8" md="4" sm="2" class="mx-0">
+                                <div class="my-2 pl-3">
+                                <v-hover v-slot:default="{ hover }" >
+                                    <v-card :elevation="hover ? 16 : 2" >
+                                        <v-img @click="step++" src="https://images.pexels.com/photos/3014858/pexels-photo-3014858.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></v-img>
+                                    </v-card>
+                                </v-hover>
                             </div>
-                        <a href="#reviews" class="total-review" rel="nofollow">(<span class="count"> 5 </span> customer review)</a>
-                        </div>
-                        <div class="price">
-                            <h3>
-                            <span>$</span>
-                            160.00
-                            </h3>
-                            <del>$ 180</del>
-                        </div>
-                        <div class="prodect-details">
-                            <h3>Product Details</h3>
-                            <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem,</p>
-                        </div>
-                        <div class="buy-product">
-                            <div class="stock">
-                            <v-btn color="#4CAF50" dark>IN STOCKS
-                            <v-icon dark right>check_circle</v-icon>
+                            </v-col>
+                            <v-col cols="2" lg="8" md="4" sm="2" class="mx-0">
+                                <div class="my-2 pl-3">
+                                <v-hover v-slot:default="{ hover }" >
+                                    <v-card :elevation="hover ? 16 : 2" >
+                                        <v-img @click="step++" src="https://images.pexels.com/photos/3014858/pexels-photo-3014858.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></v-img>
+                                    </v-card>
+                                </v-hover>
+                            </div>
+                            </v-col>
+                            <v-col cols="2" lg="8" md="4" sm="2" class="mx-0">
+                                <div class="my-2 pl-3">
+                                <v-hover v-slot:default="{ hover }" >
+                                    <v-card :elevation="hover ? 16 : 2" >
+                                        <v-img @click="step++" src="https://images.pexels.com/photos/3014858/pexels-photo-3014858.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></v-img>
+                                    </v-card>
+                                </v-hover>
+                            </div>
+                            </v-col>
+                            <v-col cols="2" lg="8" md="4" sm="2" class="mx-0">
+                                <div class="my-2 pl-3">
+                                <v-hover v-slot:default="{ hover }" >
+                                    <v-card :elevation="hover ? 16 : 2" >
+                                        <v-img @click="step++" src="https://images.pexels.com/photos/3014858/pexels-photo-3014858.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></v-img>
+                                    </v-card>
+                                </v-hover>
+                            </div>
+                            </v-col>
+                            <v-col cols="2" lg="8" md="4" sm="2" class="mx-0">
+                                <div class="my-2 pl-3">
+                                <v-hover v-slot:default="{ hover }" >
+                                    <v-card :elevation="hover ? 16 : 2" >
+                                        <v-img @click="step++" src="https://images.pexels.com/photos/3014858/pexels-photo-3014858.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></v-img>
+                                    </v-card>
+                                </v-hover>
+                            </div>
+                            </v-col>
+                        </v-row>
+                    </v-col>
+                    
+                    <v-col cols="12" sm="5">
+                        <div class="my-2 pr-3">
+                            <p class="text-center display-2 font-weight-bold">
+                                Baju Kau Putih
+                            </p>
+                            <p class="text-center display-1 font-italic font-weight-light">
+                                Rent • RM 160.00
+                            </p>
+                            <v-divider></v-divider>
+                            
+                            <div class="mt-5">
+                                <p class="headline font-weight-bold mb-2">Product Details</p>
+                                <p class="text-justify font-weight-light">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem,</p>
+                            </div>
+                            <div class="mt-1">
+                                <p class="headline font-weight-bold mb-2">Material</p>
+                                <p class="text-justify font-weight-light">Ball Gown</p>
+                            </div>
+                            <div class="mt-1">
+                                <p class="headline font-weight-bold mb-2">Style</p>
+                                <p class="text-justify font-weight-light">White</p>
+                            </div>
+                            <v-divider></v-divider>
+                            <v-layout justify-center>
+                            <v-btn large color="yellow darken-2" class="mt-10" min-width="250">
+                                <v-icon left>mdi-star-face</v-icon>
+                                Add to Wishlist
                             </v-btn>
-                            </div>
-                            <div class="product-qty">
-                            
-                            <div class="cart-btn">
-                            <v-btn  class="px-5" color="error"><i class="fa fa-shopping-cart" aria-hidden="true"></i> ADD TO CART</v-btn>
-                                            <v-btn  class="cart-btn px-5" color="error">BUY NOW</v-btn>
-                            </div>
-                            <button><i class="fa fa-heart" aria-hidden="true"></i>    ADD TO WISHLIST</button>
-                            
-                            </div>
+                            </v-layout>
+                            <v-layout justify-center>
+                            <v-btn large color="red darken-4" dark class="mt-3" min-width="250">
+                                <v-icon left>mdi-ferry</v-icon>
+                                Add to Planner
+                            </v-btn>
+                            </v-layout>
+                            <v-layout justify-center>
+                            <v-btn large color="green darken-4" dark class="mt-3" min-width="250">
+                                <v-icon left>mdi-cart-arrow-right</v-icon>
+                                Proceed to Book
+                            </v-btn>
+                            </v-layout>
                         </div>
+                    </v-col>
+                </v-row>
+                <v-row>
+                    <v-layout justify-center>
+                    <v-col cols="12" sm="12">
+                        <div class="text-xs-center ml-4">
+                            <v-divider></v-divider>
+                        <v-card class="mx-auto mt-5 mb-6" max-width="1600" min-width="250" :elevation="2">
+                            <v-tabs background-color="red lighten-4" color="red darken-4" centered fixed-tabs >
+                            
+                            <v-tab>Reviews
+                            </v-tab>
+                            <v-tab>Q&A
+                            </v-tab>
+
+                            
+                            
+                            <v-tab-item >
+                                <v-card max-width="1600" class="mx-auto" >
+    
+                                    <v-list three-line v-for="(item, index) in items" :key="index">
+                                        <v-list-item
+                                        :key="item.title"
+                                        >
+                                        <v-list-item-avatar>
+                                            <v-img :src="item.avatar"></v-img>
+                                        </v-list-item-avatar>
+
+                                        <v-list-item-content>
+                                            <v-list-item-title> <a :href="'/UserProfile/' + item.id">{{item.title}} </a></v-list-item-title>
+                                            <v-list-item-subtitle>Reviewed on : {{item.subtitle}}</v-list-item-subtitle>
+                                            <p class="subtitle-2">{{item.review}}</p>
+                                        </v-list-item-content>
+                                        </v-list-item>
+                                        <v-divider></v-divider>
+                                    
+                                    </v-list>
+                                </v-card>
+                            </v-tab-item>
+                            <v-tab-item >
+                                <v-container fluid>
+                                
+                                    <v-row class="fill-height" >
+                                        a
+                                    </v-row>
+                                </v-container>
+                            </v-tab-item>
+                            </v-tabs>
+                        </v-card>
                         </div>
-                </v-col>
+                    </v-col>
+                    </v-layout>
+                </v-row>
             </v-container>
         </div>
     </v-app>
@@ -83,6 +205,42 @@
 export default {
   
     data: () => ({
+        step:1,
+        partners: 
+    [
+      {
+        type:"venue",
+        name:"A.sdn.bhd",
+        src: 'https://images.pexels.com/photos/2467277/pexels-photo-2467277.png?auto=compress&cs=tinysrgb&dpr=1&w=500',
+      },
+    ],
+    items: [
+        {
+          avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
+          id:'1000',
+          title: 'Ali Bin Abu',
+          subtitle: '10/10/2019',
+          review: "Wish I could come, but I'm out of town this weekend.Wish I could come, but I'm out of town this weekend."
+        },
+        {
+          avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
+          title: 'Summer BBQ',
+          subtitle: '10/10/2019',
+          review: "Wish I could come, but I'm out of town this weekend.",
+        },
+        {
+          avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg',
+          title: 'Oui oui',
+          subtitle: '10/10/2019',
+          review: "Do you have Paris recommendations? Have you ever been?",
+        },
+        {
+          avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg',
+          title: 'Birthday gift',
+          subtitle: '10/10/2019',
+          review: "Have any ideas about what we should get Heidi for her birthday?",
+        },
+      ],
     }),
     
     methods: {
@@ -115,6 +273,7 @@ figure.zoom {
     display: block;
     width: 100%;
     max-height: 650px;
+    min-height: 500px;
   }
   background-position: 50% 50%;
   position: relative;

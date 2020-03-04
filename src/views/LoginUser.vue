@@ -19,7 +19,7 @@
           </v-list-item>
         </v-list>
       </v-navigation-drawer>
-      <v-app-bar app dark clipped-left color="black" dense>
+      <v-app-bar app dark clipped-left color="black">
         <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
         <v-toolbar-title class="mr-5 align-center">
           <span class="title">MerryGo</span>
@@ -28,7 +28,7 @@
       </v-app-bar>
       <v-content>
         <v-img
-      src="../assets/home.jpg"
+      src="https://images.pexels.com/photos/2959190/pexels-photo-2959190.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
       :aspect-ratio="16/9"
       class="grey lighten-2"
       max-width="2000"
@@ -64,7 +64,7 @@
                           <h3 class="text-center mt-3"> Forget your password?</h3>
                         </v-card-text>
                         <div class="text-center mt-3">
-                          <v-btn rounded color="red darken-4" dark to="/Checklist">Sign In</v-btn>
+                          <v-btn rounded color="red darken-4" dark to="/User/Dashboard">Sign In</v-btn>
                         </div>
                       </v-col>
                       <v-col cols="12" md="4" class="red darken-4">
