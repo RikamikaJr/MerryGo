@@ -123,12 +123,6 @@
                             </div>
                             <v-divider></v-divider>
                             <v-layout justify-center>
-                            <v-btn large color="yellow darken-2" class="mt-10" min-width="250">
-                                <v-icon left>mdi-star-face</v-icon>
-                                Add to Wishlist
-                            </v-btn>
-                            </v-layout>
-                            <v-layout justify-center>
                             <v-btn large color="red darken-4" dark class="mt-3" min-width="250">
                                 <v-icon left>mdi-ferry</v-icon>
                                 Add to Planner

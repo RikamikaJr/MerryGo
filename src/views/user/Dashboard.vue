@@ -50,7 +50,7 @@
                     <v-layout >
                         <v-flex>
                             <v-row>
-                                <v-col cols="12" sm="12" md="6" lg="3">
+                                <v-col cols="12" sm="12" md="4" lg="4">
                                     <v-card color="red lighten-4">
                                         <v-list-item>
                                             <v-list-item-avatar><v-icon color="black">mdi-ring</v-icon></v-list-item-avatar>
@@ -74,7 +74,7 @@
                                         </v-card-actions>
                                     </v-card>
                                 </v-col>
-                                <v-col cols="12" sm="12" md="6" lg="3">
+                                <v-col cols="12" sm="12" md="4" lg="4">
                                     <v-card color="red lighten-4">
                                         <v-list-item>
                                             <v-list-item-avatar><v-icon color="black">mdi-calendar-edit</v-icon></v-list-item-avatar>
@@ -98,7 +98,7 @@
                                         </v-card-actions>
                                     </v-card>
                                 </v-col>
-                                <v-col cols="12" sm="12" md="6" lg="3">
+                                <v-col cols="12" sm="12" md="4" lg="4">
                                     <v-card color="red lighten-4">
                                         <v-list-item>
                                             <v-list-item-avatar><v-icon color="black">mdi-ferry</v-icon></v-list-item-avatar>
@@ -122,30 +122,7 @@
                                         </v-card-actions>
                                     </v-card>
                                 </v-col>
-                                <v-col cols="12" sm="12" md="6" lg="3">
-                                    <v-card color="red lighten-4">
-                                        <v-list-item>
-                                            <v-list-item-avatar><v-icon color="black">mdi-star-face</v-icon></v-list-item-avatar>
-                                            <v-list-item-content>
-                                                <v-list-item-title class="subtitle font-weight-bold black--text">Wishlist</v-list-item-title>
-                                            </v-list-item-content>
-                                        </v-list-item>
-                                        <v-parallax height="140" src="https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg?auto=compress&cs=tinysrgb&dpr=1&h=750&w=1260">
-                                            <v-row align="center" justify="center" >
-                                                <v-col class="text-center" cols="12">
-                                                    <p class="display-1 font-weight-black mb-0">1</p>
-                                                </v-col>
-                                            </v-row>
-                                        </v-parallax>
-                                        <v-card-text>
-                                        You currently have 12 wishlist 
-                                        </v-card-text>
-                                        <v-divider></v-divider>
-                                        <v-card-actions>
-                                            <v-btn color="red darken-4" text>Manage Wishlist</v-btn>
-                                        </v-card-actions>
-                                    </v-card>
-                                </v-col>
+                                
                             </v-row>
                             <v-divider></v-divider>
                             <p class="display-1 font-weight-bold mt-5">Booking Status</p>
@@ -213,10 +190,6 @@
                                                     </v-card>
                                                 </v-col>
                                             </v-row>
-                                            <div v-if="booking.meetUpStatus === 'Pending Approval'">
-                                            <v-btn color="primary" @click="e1 = 1" > Continue </v-btn>
-                                            <v-btn text>Cancel</v-btn>
-                                            </div>
 
                                         </v-stepper-content>
                                     </div>
@@ -241,113 +214,24 @@
                             </v-stepper>
                                 <v-divider></v-divider>
                                 <p class="display-1 font-weight-bold mt-5">Planner List</p>
-                                <v-data-table :headers="headers" :items="desserts" sort-by="calories" class="elevation-2 mb-5" >
-                                <template v-slot:top>
-                                    <v-toolbar flat color="red lighten-4">
-                                    <v-toolbar-title class="black--text">My CRUD</v-toolbar-title>
-                                    <v-divider class="mx-4" inset vertical ></v-divider>
-                                    <v-spacer></v-spacer>
-                                    <v-dialog v-model="dialog" max-width="500px">
-                                        <template v-slot:activator="{ on }">
-                                        <v-btn color="primary" dark class="mb-2" v-on="on">New Item</v-btn>
-                                        </template>
-                                        <v-card>
-                                        <v-card-title>
-                                            <span class="headline">{{ formTitle }}</span>
-                                        </v-card-title>
-                                        <v-card-text>
-                                            <v-container>
-                                            <v-row>
-                                                <v-col cols="12" sm="6" md="4">
-                                                <v-text-field v-model="editedItem.name" label="Dessert name"></v-text-field>
-                                                </v-col>
-                                                <v-col cols="12" sm="6" md="4">
-                                                <v-text-field v-model="editedItem.calories" label="Calories"></v-text-field>
-                                                </v-col>
-                                                <v-col cols="12" sm="6" md="4">
-                                                <v-text-field v-model="editedItem.fat" label="Fat (g)"></v-text-field>
-                                                </v-col>
-                                                <v-col cols="12" sm="6" md="4">
-                                                <v-text-field v-model="editedItem.carbs" label="Carbs (g)"></v-text-field>
-                                                </v-col>
-                                                <v-col cols="12" sm="6" md="4">
-                                                <v-text-field v-model="editedItem.protein" label="Protein (g)"></v-text-field>
-                                                </v-col>
-                                            </v-row>
-                                            </v-container>
-                                        </v-card-text>
-                                        <v-card-actions>
-                                            <v-spacer></v-spacer>
-                                            <v-btn color="blue darken-1" text @click="close">Cancel</v-btn>
-                                            <v-btn color="blue darken-1" text @click="save">Save</v-btn>
-                                        </v-card-actions>
-                                        </v-card>
-                                    </v-dialog>
-                                    </v-toolbar>
-                                </template>
-                                <template v-slot:item.action="{ item }">
-                                    <v-icon small class="mr-2" @click="editItem(item)" > mdi-pencil </v-icon>
-                                    <v-icon small @click="deleteItem(item)" > mdi-delete </v-icon>
-                                </template>
-                                <template v-slot:no-data>
-                                    <v-btn color="primary" @click="initialize">Reset</v-btn>
-                                </template>
-                                </v-data-table>
+                                <v-list subheader dark>
+                                    <v-list-item v-for="planner in planners" :key="planner.title" @mouseover="hover = true">
+                                        <v-list-item-content>
+                                        <v-list-item-title v-text="planner.title"></v-list-item-title>
+                                        </v-list-item-content>
+                                        <v-list-item-icon>
+                                        <v-btn class="mr-4" fab dark small color="red">
+                                            <v-icon color="white">mdi-delete-empty</v-icon>
+                                        </v-btn>
+                                        <v-btn fab small color="blue darken-2">
+                                            <v-icon color="white">mdi-transfer-right</v-icon>
+                                        </v-btn>
+                                        </v-list-item-icon>
+                                    </v-list-item>
+                                    </v-list>
+                                    <br>
                                 <v-divider></v-divider>
-                                <p class="display-1 font-weight-bold mt-5">Wishlist</p>
-                                <v-data-table :headers="headers" :items="desserts" sort-by="calories" class="elevation-2 mb-5" >
-                                <template v-slot:top>
-                                    <v-toolbar flat color="red lighten-4">
-                                    <v-toolbar-title class="black--text">My CRUD</v-toolbar-title>
-                                    <v-divider class="mx-4" inset vertical ></v-divider>
-                                    <v-spacer></v-spacer>
-                                    <v-dialog v-model="dialog" max-width="500px">
-                                        <template v-slot:activator="{ on }">
-                                        <v-btn color="primary" dark class="mb-2" v-on="on">New Item</v-btn>
-                                        </template>
-                                        <v-card>
-                                        <v-card-title>
-                                            <span class="headline">{{ formTitle }}</span>
-                                        </v-card-title>
-                                        <v-card-text>
-                                            <v-container>
-                                            <v-row>
-                                                <v-col cols="12" sm="6" md="4">
-                                                <v-text-field v-model="editedItem.name" label="Dessert name"></v-text-field>
-                                                </v-col>
-                                                <v-col cols="12" sm="6" md="4">
-                                                <v-text-field v-model="editedItem.calories" label="Calories"></v-text-field>
-                                                </v-col>
-                                                <v-col cols="12" sm="6" md="4">
-                                                <v-text-field v-model="editedItem.fat" label="Fat (g)"></v-text-field>
-                                                </v-col>
-                                                <v-col cols="12" sm="6" md="4">
-                                                <v-text-field v-model="editedItem.carbs" label="Carbs (g)"></v-text-field>
-                                                </v-col>
-                                                <v-col cols="12" sm="6" md="4">
-                                                <v-text-field v-model="editedItem.protein" label="Protein (g)"></v-text-field>
-                                                </v-col>
-                                            </v-row>
-                                            </v-container>
-                                        </v-card-text>
-                                        <v-card-actions>
-                                            <v-spacer></v-spacer>
-                                            <v-btn color="blue darken-1" text @click="close">Cancel</v-btn>
-                                            <v-btn color="blue darken-1" text @click="save">Save</v-btn>
-                                        </v-card-actions>
-                                        </v-card>
-                                    </v-dialog>
-                                    </v-toolbar>
-                                </template>
-                                <template v-slot:item.action="{ item }">
-                                    <v-icon small class="mr-2" @click="editItem(item)" > mdi-pencil </v-icon>
-                                    <v-icon small @click="deleteItem(item)" > mdi-delete </v-icon>
-                                </template>
-                                <template v-slot:no-data>
-                                    <v-btn color="primary" @click="initialize">Reset</v-btn>
-                                </template>
-                                </v-data-table>
-                        </v-flex>
+                            </v-flex>
                     </v-layout>
                 </v-container>
             </v-content>
@@ -362,6 +246,7 @@
         drawer: null,
         messages: 2,
         show: false,
+        hover: false,
         e1: 1,
         bookings: [
             {
@@ -406,6 +291,12 @@
       carbs: 0,
       protein: 0,
     },
+     planners: [
+        { title: 'Jason Oner'},
+        { title: 'Ranee Carlson'},
+        { title: 'Cindy Baker',},
+        { title: 'Ali Connors',},
+      ],
   }),
 
   computed: {

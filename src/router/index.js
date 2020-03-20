@@ -31,6 +31,7 @@ import ProdVenue from '../views/product/Venue.vue'
 
 Vue.use(Router)
 let router = new Router({
+  
   mode :'history',
   hash: false,
   
@@ -115,10 +116,12 @@ let router = new Router({
       name: 'about',
       component: About
     },
-  ]
+  ],
+  //scrollBehavior() {
+  //  document.getElementById('app').scrollIntoView();
+  //  }
 
-
-})
+});
 
 
 
