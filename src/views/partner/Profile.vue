@@ -1,28 +1,6 @@
 <template>
   <div id="app">
     <v-app id="inspire">
-      <v-card class="overflow-hidden" >
-        <v-app-bar fixed color="rgb(255, 0, 0, 0)" dark hide-on-scroll >
-          <v-toolbar-title>MerryGo</v-toolbar-title>
-          <v-spacer></v-spacer>
-          <v-tooltip bottom>
-            <template v-slot:activator="{ on }">
-              <v-btn icon v-on="on" to="/loginuser">
-                <v-icon color="grey lighten-1">mdi-nature-people</v-icon>
-              </v-btn>
-            </template>
-            <span>Wedding Planner</span>
-          </v-tooltip>
-          <v-tooltip bottom>
-            <template v-slot:activator="{ on }">
-              <v-btn icon v-on="on" to="/loginuser">
-                <v-icon color="grey lighten-1">mdi-login</v-icon>
-              </v-btn>
-            </template>
-            <span>Login/Signup</span>
-          </v-tooltip>
-        </v-app-bar>
-      </v-card>
       <v-content>
         <v-parallax dark height="300" src="https://images.pexels.com/photos/7477/night-trees-stars.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" >
           <v-row align="center" justify="center" >

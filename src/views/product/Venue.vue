@@ -1,27 +1,7 @@
 <template>
     <v-app id="inspire">
         <div class="checklist">
-            <v-card class="overflow-hidden" >
-                <v-app-bar fixed color="black" dark hide-on-scroll>
-                    <v-toolbar-title>MerryGo</v-toolbar-title>
-                    <v-spacer></v-spacer>
-                    <v-tooltip bottom>
-                        <template v-slot:activator="{ on }">
-                        <v-btn icon v-on="on" to="/loginuser">
-                            <v-icon color="grey lighten-1">mdi-nature-people</v-icon>
-                        </v-btn>
-                        </template>
-                        <span>Wedding Planner</span>
-                    </v-tooltip>
-                    <v-tooltip bottom>
-                        <template v-slot:activator="{ on }">
-                        <v-btn icon v-on="on" to="/loginuser">
-                            <v-icon color="grey lighten-1">mdi-login</v-icon>
-                        </v-btn>
-                        </template>
-                        <span>Login/Signup</span>
-                    </v-tooltip>
-                </v-app-bar>
+            <v-card color="black" class="overflow-hidden" >
             </v-card>
         </div>
         <div class="detail">

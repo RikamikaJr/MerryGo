@@ -30,7 +30,7 @@
 <script>
     export default {
         data: () => ({
-            fill: 'transparent',
+            fill: 'black',
         }),
         methods: {
             onScroll () {
@@ -38,7 +38,7 @@
             if (scrollTop) {
                 this.fill = 'red darken-4';
             } else {
-                this.fill = 'transparent';
+                this.fill = 'black';
             }
             },
         }

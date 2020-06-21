@@ -8,7 +8,8 @@ import Partner from '../views/Partner.vue'
 
 //Partner
 import PartnerProfile from '../views/partner/Profile.vue'
-import PartnerDashboard from '../views/dashboard/Partner.vue'
+import PartnerDashboard from '../views/partner/Dashboard.vue'
+import PartnerProduct from '../views/partner/Product.vue'
 
 //User
 import UserProfile from '../views/user/Profile.vue'
@@ -44,52 +45,67 @@ let router = new Router({
     },
     {
       path: '/home',
-      component: Home
+      component: Home,
     },
     {
       path: '/loginuser',
       name: 'loginuser',
-      component: LoginUser
+      component: LoginUser,
+      meta: {layout: "Login"}
     },
     {
       path: '/LoginPartner',
       name: 'loginpartner',
-      component: LoginPartner
+      component: LoginPartner,
+      meta: {layout: "Login"}
     },
     {
       path: '/Partner',
       name: 'partner',
-      component: Partner
+      component: Partner,
+      
     },
     {
-      path: '/Dashboard/Partner',
-      name: 'dashboardpartner',
-      component: PartnerDashboard
+      path: '/Partner/Dashboard',
+      name: 'partnerdashboard',
+      component: PartnerDashboard,
+      meta: {layout: "Login"}
+    },
+    {
+      path: '/Partner/Product',
+      name: 'partnerproduct',
+      component: PartnerProduct,
+      meta: {layout: "Login"}
     },
     {
       path: '/User/Dashboard',
       name: 'userdashboard',
-      component: UserDashboard
+      component: UserDashboard,
+      meta: {layout: "Login"}
     },
     {
       path: '/User/ProfileSetting',
       name: 'userprofilesetting',
-      component: UserProfileSetting
+      component: UserProfileSetting,
+      meta: {layout: "Login"}
     },
     {
       path: '/User/Schedule',
       name: 'userschedule',
-      component: UserSchedule
+      component: UserSchedule,
+      meta: {layout: "Login"}
     },
     {
       path: '/User/Policies',
       name: 'userpolicies',
-      component: UserPolicies
+      component: UserPolicies,
+      meta: {layout: "Login"}
     },
     {
       path: '/Partner/Profile',
       name: 'partnerprofile',
-      component: PartnerProfile
+      component: PartnerProfile,
+      meta: {layout: "altbasichome"}
     },
     {
       path: '/User/Profile',
@@ -109,7 +125,8 @@ let router = new Router({
     {
       path: '/Product/WedVenue',
       name: 'prodvenue',
-      component: ProdVenue
+      component: ProdVenue,
+      meta: {layout: "altbasichome"}
     },
     {
       path: '/about',

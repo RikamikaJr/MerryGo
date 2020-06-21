@@ -65,7 +65,7 @@
                           <h3 class="text-center mt-3"> Forget your password?</h3>
                         </v-card-text>
                         <div class="text-center mt-3">
-                          <v-btn rounded color="red darken-4" dark to="/Dashboard/Partner">Sign In</v-btn>
+                          <v-btn rounded color="red darken-4" dark to="/Partner/Dashboard">Sign In</v-btn>
                         </div>
                       </v-col>
                       <v-col cols="12" md="4" class="red darken-4">

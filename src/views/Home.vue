@@ -2,28 +2,6 @@
   <v-app id="inspire">
     <div class="home">
      <img alt="Vue logo" src="../assets/home.png">
-      <v-card class="overflow-hidden" >
-        <v-app-bar fixed color="rgb(255, 0, 0, 0)" dark hide-on-scroll >
-          <v-toolbar-title>MerryGo</v-toolbar-title>
-          <v-spacer></v-spacer>
-          <v-tooltip bottom>
-            <template v-slot:activator="{ on }">
-              <v-btn icon v-on="on" to="/loginuser">
-                <v-icon color="grey lighten-1">mdi-nature-people</v-icon>
-              </v-btn>
-            </template>
-            <span>Wedding Planner</span>
-          </v-tooltip>
-          <v-tooltip bottom>
-            <template v-slot:activator="{ on }">
-              <v-btn icon v-on="on" to="/loginuser">
-                <v-icon color="grey lighten-1">mdi-login</v-icon>
-              </v-btn>
-            </template>
-            <span>Login/Signup</span>
-          </v-tooltip>
-        </v-app-bar>
-      </v-card>
       <div class="complete">
         <h1>All for one</h1>
         <h3>Explore our completed wedding plans which cover all packages for a variety of budgets</h3>
