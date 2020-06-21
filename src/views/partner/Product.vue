@@ -57,19 +57,32 @@
                 <v-container fluid fill-height >
                     <v-layout align-center justify-center >
                         <v-flex>
-                          <h2><center>Product Management</center></h2>
-                          <v-col cols="12" sm="3">
-                          <v-card class="mx-auto" max-width="300" color="white" raised>
-                                <v-img class="white--text align-end" height="200px" src="https://images.pexels.com/photos/1500881/pexels-photo-1500881.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></v-img>
-                                <v-card-text class="pt-2" style="position: relative;">
-                                <div class="title">Beauty White Dress</div>
-                                </v-card-text>
-                                <v-card-actions>
-                                    <v-btn color="yellow" light>Update</v-btn>
-                                    <v-btn color="red" light>Remove</v-btn>
-                                </v-card-actions>
-                            </v-card>
-                          </v-col>
+                          <h2><center>Product Management</center></h2><br>
+                          <center><v-btn class="mx-2" color="green darken-3" dark to="/Product/WedVenue">Add New Product</v-btn></center><br>
+                          <v-row class="fill-height" align="center" justify="center" >
+                            <v-col v-for="(partner, i) in partners" :key="i" cols="8" md="2" align="center" justify="center" class="mx-2">
+                              <v-hover>
+                                <template v-slot:default="{ hover }">
+                                  <v-card class="mx-auto" min-width="235" max-height="400" elevation="12" color="black" dark>
+                                    <v-img class="white--text align-end" height="220px" :src="`${partner.src}`"></v-img>
+                                    <v-card-text style="position: relative;">
+                                      <div class="font-weight-bold white--text subtitle">{{ partner.productName }}</div>
+                                      <v-card-actions>
+                                        <v-rating v-model="partner.productRating" background-color="orange lighten-3" dense color="orange" class="rating" small readonly></v-rating>
+                                        <p class="font-weight-black pl-2 mt-0 mb-0">({{ partner.productReview }} reviews)</p>
+                                      </v-card-actions>
+                                    </v-card-text>
+                                    <v-fade-transition>
+                                      <v-overlay v-if="hover" absolute color="black" >
+                                        <v-btn class="mb-2" color="yellow darken-4" to="/Product/WedVenue">Update</v-btn><br>
+                                        <v-btn color="red darken-4" to="/Product/WedVenue">Remove</v-btn>
+                                      </v-overlay>
+                                    </v-fade-transition>
+                                  </v-card>
+                                </template>
+                              </v-hover>
+                            </v-col>
+                          </v-row>
                         </v-flex>
                     </v-layout>
                 </v-container>
@@ -82,6 +95,21 @@
 
     export default {
         data: () => ({
+           partners: 
+    [
+      {
+        productName: "Baju Aku Putih",
+        productRating: 5,
+        productReview: 90,
+        src: 'https://images.pexels.com/photos/1721944/pexels-photo-1721944.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      },
+      {
+        productName: "Baju Kau Putih",
+        productRating: 4.5,
+        productReview: 123,
+        src: 'https://images.pexels.com/photos/3014853/pexels-photo-3014853.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      },
+    ],
         drawer: null,
         messages: 2,
         show: false,
