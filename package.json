@@ -9,7 +9,7 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "apexcharts": "^3.19.0",
+    "apexcharts": "^3.24.0",
     "core-js": "^3.4.4",
     "vue": "^2.6.10",
     "vue-apexcharts": "^1.5.3",
